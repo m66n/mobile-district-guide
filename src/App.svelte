@@ -1,4 +1,5 @@
 <script>
+  import LetterKey from './lib/LetterKey.svelte'
   import { streetDictionary } from './streets'
 
   const districts = {
@@ -26,6 +27,8 @@
     filterText = ''
     filteredStreets = Object.keys(streetDictionary)
   }
+
+  let appendFilterText = (letter) => (filterText += letter)
 </script>
 
 <main>
@@ -92,18 +95,21 @@
       <div class="mt-2 flex flex-col">
         <div class="flex flex-row justify-center">
           <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >q</button
+            <button
+              class="p-1 w-full rounded-md border border-gray-300"
+              on:click={() => (filterText += 'q')}>q</button
             >
           </div>
           <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >w</button
+            <button
+              class="p-1 w-full rounded-md border border-gray-300"
+              on:click={() => (filterText += 'w')}>w</button
             >
           </div>
           <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >e</button
+            <button
+              class="p-1 w-full rounded-md border border-gray-300"
+              on:click={() => (filterText += 'e')}>e</button
             >
           </div>
           <div class="p-1 grow">
@@ -143,93 +149,30 @@
           </div>
         </div>
         <div class="flex flex-row">
-          <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >a</button
-            >
-          </div>
-          <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >s</button
-            >
-          </div>
-          <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >d</button
-            >
-          </div>
-          <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >f</button
-            >
-          </div>
-          <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >g</button
-            >
-          </div>
-          <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >h</button
-            >
-          </div>
-          <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >j</button
-            >
-          </div>
-          <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >k</button
-            >
-          </div>
-          <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >l</button
-            >
-          </div>
+          <LetterKey letter={'a'} clickHandler={appendFilterText} />
+          <LetterKey letter={'s'} clickHandler={appendFilterText} />
+          <LetterKey letter={'d'} clickHandler={appendFilterText} />
+          <LetterKey letter={'f'} clickHandler={appendFilterText} />
+          <LetterKey letter={'g'} clickHandler={appendFilterText} />
+          <LetterKey letter={'h'} clickHandler={appendFilterText} />
+          <LetterKey letter={'j'} clickHandler={appendFilterText} />
+          <LetterKey letter={'k'} clickHandler={appendFilterText} />
+          <LetterKey letter={'l'} clickHandler={appendFilterText} />
         </div>
         <div class="flex flex-row">
-          <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >z</button
-            >
-          </div>
-          <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >x</button
-            >
-          </div>
-          <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >c</button
-            >
-          </div>
-          <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >v</button
-            >
-          </div>
-          <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >b</button
-            >
-          </div>
-          <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >n</button
-            >
-          </div>
-          <div class="p-1 grow">
-            <button class="p-1 w-full rounded-md border border-gray-300"
-              >m</button
-            >
-          </div>
+          <LetterKey letter={'z'} clickHandler={appendFilterText} />
+          <LetterKey letter={'x'} clickHandler={appendFilterText} />
+          <LetterKey letter={'c'} clickHandler={appendFilterText} />
+          <LetterKey letter={'v'} clickHandler={appendFilterText} />
+          <LetterKey letter={'b'} clickHandler={appendFilterText} />
+          <LetterKey letter={'n'} clickHandler={appendFilterText} />
+          <LetterKey letter={'m'} clickHandler={appendFilterText} />
           <div class="p-1 grow">
             <button
               class="p-1 w-full flex justify-center rounded-md border border-gray-300 {filterText
                 ? ''
                 : 'opacity-50 cursor-not-allowed'}"
+              on:click={() => (filterText = filterText.slice(0, -1))}
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
