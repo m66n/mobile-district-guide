@@ -63,12 +63,14 @@
           {#if filterText}
             {filterText}
           {:else}
-            <p>enter text to filter street list</p>
+            <p class="text-gray-300">enter text to filter street list</p>
           {/if}
         </div>
         <div>
           <button
-            class="p-1 rounded-md border border-red-400 bg-red-200"
+            class="p-1 rounded-md border border-red-400 bg-red-200 {filterText
+              ? ''
+              : 'opacity-50 cursor-not-allowed'}"
             on:click={resetFilterText}
             ><svg
               xmlns="http://www.w3.org/2000/svg"
@@ -89,96 +91,162 @@
       </div>
       <div class="mt-2 flex flex-col">
         <div class="flex flex-row justify-center">
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">q</button>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >q</button
+            >
           </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">w</button>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >w</button
+            >
           </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">e</button>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >e</button
+            >
           </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">r</button>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >r</button
+            >
           </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">t</button>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >t</button
+            >
           </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">y</button>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >y</button
+            >
           </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">u</button>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >u</button
+            >
           </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">i</button>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >i</button
+            >
           </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">o</button>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >o</button
+            >
           </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">p</button>
-          </div>
-        </div>
-        <div class="flex flex-row justify-center">
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">a</button>
-          </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">s</button>
-          </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">d</button>
-          </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">f</button>
-          </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">g</button>
-          </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">h</button>
-          </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">j</button>
-          </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">k</button>
-          </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">l</button>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >p</button
+            >
           </div>
         </div>
-        <div class="flex flex-row justify-center">
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">z</button>
+        <div class="flex flex-row">
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >a</button
+            >
           </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">x</button>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >s</button
+            >
           </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">c</button>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >d</button
+            >
           </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">v</button>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >f</button
+            >
           </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">b</button>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >g</button
+            >
           </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">n</button>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >h</button
+            >
           </div>
-          <div class="p-1">
-            <button class="p-1 w-6 rounded-md border border-gray-300">m</button>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >j</button
+            >
           </div>
-          <div class="p-1">
-            <button class="p-1 rounded-md border border-gray-300"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75L14.25 12m0 0l2.25 2.25M14.25 12l2.25-2.25M14.25 12L12 14.25m-2.58 4.92l-6.375-6.375a1.125 1.125 0 010-1.59L9.42 4.83c.211-.211.498-.33.796-.33H19.5a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25h-9.284c-.298 0-.585-.119-.796-.33z" />
-            </svg>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >k</button
+            >
+          </div>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >l</button
+            >
+          </div>
+        </div>
+        <div class="flex flex-row">
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >z</button
+            >
+          </div>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >x</button
+            >
+          </div>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >c</button
+            >
+          </div>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >v</button
+            >
+          </div>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >b</button
+            >
+          </div>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >n</button
+            >
+          </div>
+          <div class="p-1 grow">
+            <button class="p-1 w-full rounded-md border border-gray-300"
+              >m</button
+            >
+          </div>
+          <div class="p-1 grow">
+            <button
+              class="p-1 w-full flex justify-center rounded-md border border-gray-300 {filterText
+                ? ''
+                : 'opacity-50 cursor-not-allowed'}"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9.75L14.25 12m0 0l2.25 2.25M14.25 12l2.25-2.25M14.25 12L12 14.25m-2.58 4.92l-6.375-6.375a1.125 1.125 0 010-1.59L9.42 4.83c.211-.211.498-.33.796-.33H19.5a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25h-9.284c-.298 0-.585-.119-.796-.33z"
+                />
+              </svg>
             </button>
           </div>
         </div>
-
       </div>
     </div>
   </div>
