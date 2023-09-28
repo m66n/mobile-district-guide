@@ -1,10 +1,11 @@
+// @ts-nocheck
 function lowerAndStrip(str) {
   return str.toLowerCase().replace(/[^a-z]/g, '')
 }
 
 export default function constructGraph(strList) {
   let graph = {}
-  
+
   let currentLevel = graph
 
   for (const str of strList) {
