@@ -22,7 +22,7 @@
 
   const filterGraph = constructGraph(Object.keys(streetDictionary))
   let currentLevel = filterGraph
-  let prevLevel = currentLevel
+  let prevLevels = []
 
   let filteredStreets = Object.keys(streetDictionary)
 
@@ -34,14 +34,14 @@
     filterText = ''
     filteredStreets = Object.keys(streetDictionary)
     currentLevel = filterGraph
-    prevLevel = currentLevel
+    prevLevels = []
     selectedStreet = null
     selectedDistrict = null
   }
 
   let appendFilterText = (letter) => {
     filterText += letter
-    prevLevel = currentLevel
+    prevLevels.push(currentLevel)
     currentLevel = currentLevel[letter]
     filteredStreets = currentLevel['strs']
     if (!(selectedStreet in filteredStreets)) {
@@ -52,7 +52,7 @@
 
   function shortenFilterText() {
     filterText = filterText.slice(0, -1)
-    currentLevel = prevLevel
+    currentLevel = prevLevels.pop()
     filteredStreets = currentLevel['strs']
   }
 

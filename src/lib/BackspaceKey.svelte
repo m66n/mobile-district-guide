@@ -8,6 +8,7 @@
     class="p-1 w-full flex justify-center rounded-md border border-gray-300 {disabled
       ? 'opacity-50 cursor-not-allowed'
       : ''}"
+      disabled={disabled}
     on:click={() => clickHandler()}
     ><svg
       xmlns="http://www.w3.org/2000/svg"

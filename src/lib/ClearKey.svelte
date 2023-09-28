@@ -8,6 +8,7 @@
     class="p-1 rounded-md border border-red-400 bg-red-200 {disabled
       ? 'opacity-50 cursor-not-allowed'
       : ''}"
+    disabled={disabled}
     on:click={() => clickHandler()}
     ><svg
       xmlns="http://www.w3.org/2000/svg"
