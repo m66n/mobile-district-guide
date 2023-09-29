@@ -1,24 +1,10 @@
 <script>
+  import StreetList from './lib/StreetList.svelte'
   import BackspaceKey from './lib/BackspaceKey.svelte'
   import ClearKey from './lib/ClearKey.svelte'
   import LetterKey from './lib/LetterKey.svelte'
   import { streetDictionary } from './streets'
   import constructGraph from './graph'
-
-  const districts = {
-    1: {
-      location: 'West Hill School',
-      address: 'Cronin Drive'
-    },
-    2: {
-      location: 'Moser School',
-      address: '10 School Street'
-    },
-    3: {
-      location: 'Griswold Middle School',
-      address: '144 Bailey Road'
-    }
-  }
 
   const filterGraph = constructGraph(Object.keys(streetDictionary))
   let currentLevel = filterGraph
@@ -26,8 +12,6 @@
 
   let filteredStreets = Object.keys(streetDictionary)
 
-  let selectedStreet
-  let selectedDistrict
   let filterText = ''
 
   function resetFilterText() {
@@ -35,8 +19,6 @@
     filteredStreets = Object.keys(streetDictionary)
     currentLevel = filterGraph
     prevLevels = []
-    selectedStreet = null
-    selectedDistrict = null
   }
 
   let appendFilterText = (letter) => {
@@ -44,10 +26,6 @@
     prevLevels.push(currentLevel)
     currentLevel = currentLevel[letter]
     filteredStreets = currentLevel['strs']
-    if (!(selectedStreet in filteredStreets)) {
-      selectedStreet = null
-      selectedDistrict = null
-    }
   }
 
   function shortenFilterText() {
@@ -58,35 +36,12 @@
 </script>
 
 <main>
-  <div class="mx-auto p-1">
-    <div class="flex flex-col">
-      <div class="flex flex-row gap-2">
-        <div class="basis-1/2">
-          {#if selectedDistrict}
-            <fieldset class="w-full rounded-md border border-gray-300 p-1">
-              <legend class="text-sm">District {selectedDistrict}</legend>
-              <p>{districts[selectedDistrict].location}</p>
-              <p>{districts[selectedDistrict].address}</p>
-            </fieldset>
-          {/if}
-        </div>
-        <div class="basis-1/2">
-          <label for="streets" class="block text-sm">Choose a street:</label>
-          <select
-            class="w-full rounded-md border border-gray-300"
-            id="streets"
-            name="streets"
-            size="10"
-            bind:value={selectedStreet}
-            on:change={() =>
-              (selectedDistrict = streetDictionary[selectedStreet])}
-          >
-            {#each filteredStreets as street}
-              <option value={street}>{street}</option>
-            {/each}
-          </select>
-        </div>
-      </div>
+  <div class="mx-auto p-1 max-w-xl">
+    <div class="flex flex-col min-h-screen max-h-screen">
+      <StreetList
+        streets={filteredStreets}
+        getDistrict={(street) => streetDictionary[street]}
+      />
       <div class="mt-2 flex gap-2">
         <div class="flex-grow p-1 rounded-md border border-gray-300">
           {#if filterText}
