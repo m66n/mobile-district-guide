@@ -37,7 +37,7 @@
 
 <main>
   <div class="mx-auto p-1 max-w-xl">
-    <div class="flex flex-col min-h-screen max-h-screen">
+    <div class="flex flex-col min-h-[80vh] max-h-[80vh]">
       <StreetList
         streets={filteredStreets}
         getDistrict={(street) => streetDictionary[street]}
