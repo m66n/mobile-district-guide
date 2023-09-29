@@ -55,8 +55,6 @@
     currentLevel = prevLevels.pop()
     filteredStreets = currentLevel['strs']
   }
-
-  let disable = (letter) => !(letter in currentLevel)
 </script>
 
 <main>
