@@ -104,136 +104,136 @@
           <LetterKey
             letter={'q'}
             clickHandler={appendFilterText}
-            disabled={!('q' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'w'}
             clickHandler={appendFilterText}
-            disabled={!('w' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'e'}
             clickHandler={appendFilterText}
-            disabled={!('e' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'r'}
             clickHandler={appendFilterText}
-            disabled={!('r' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'t'}
             clickHandler={appendFilterText}
-            disabled={!('t' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'y'}
             clickHandler={appendFilterText}
-            disabled={!('y' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'u'}
             clickHandler={appendFilterText}
-            disabled={!('u' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'i'}
             clickHandler={appendFilterText}
-            disabled={!('i' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'o'}
             clickHandler={appendFilterText}
-            disabled={!('o' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'p'}
             clickHandler={appendFilterText}
-            disabled={!('p' in currentLevel)}
+            allowed={currentLevel}
           />
         </div>
         <div class="flex flex-row gap-1">
           <LetterKey
             letter={'a'}
             clickHandler={appendFilterText}
-            disabled={!('a' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'s'}
             clickHandler={appendFilterText}
-            disabled={!('s' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'d'}
             clickHandler={appendFilterText}
-            disabled={!('d' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'f'}
             clickHandler={appendFilterText}
-            disabled={!('f' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'g'}
             clickHandler={appendFilterText}
-            disabled={!('g' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'h'}
             clickHandler={appendFilterText}
-            disabled={!('h' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'j'}
             clickHandler={appendFilterText}
-            disabled={!('j' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'k'}
             clickHandler={appendFilterText}
-            disabled={!('k' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'l'}
             clickHandler={appendFilterText}
-            disabled={!('l' in currentLevel)}
+            allowed={currentLevel}
           />
         </div>
         <div class="flex flex-row gap-1">
           <LetterKey
             letter={'z'}
             clickHandler={appendFilterText}
-            disabled={!('z' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'x'}
             clickHandler={appendFilterText}
-            disabled={!('x' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'c'}
             clickHandler={appendFilterText}
-            disabled={!('c' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'v'}
             clickHandler={appendFilterText}
-            disabled={!('v' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'b'}
             clickHandler={appendFilterText}
-            disabled={!('b' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'n'}
             clickHandler={appendFilterText}
-            disabled={!('n' in currentLevel)}
+            allowed={currentLevel}
           />
           <LetterKey
             letter={'m'}
             clickHandler={appendFilterText}
-            disabled={!('m' in currentLevel)}
+            allowed={currentLevel}
           />
           <BackspaceKey
             disabled={!filterText}

@@ -1,7 +1,9 @@
 <script>
   export let letter
   export let clickHandler
-  export let disabled
+  export let allowed = {}
+
+  $: disabled = !(letter in allowed)
 </script>
 
 <div class="grow">
