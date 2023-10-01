@@ -3,6 +3,14 @@ function lowerAndStrip(str) {
   return str.toLowerCase().replace(/[^a-z]/g, '')
 }
 
+function pushStreet(str, lvl) {
+  if (!('strs' in lvl)) {
+    lvl['strs'] = [str]
+  } else {
+    lvl['strs'].push(str)
+  }
+}
+
 export default function constructGraph(strList) {
   let graph = {}
 
@@ -13,14 +21,10 @@ export default function constructGraph(strList) {
       if (!(c in currentLevel)) {
         currentLevel[c] = {}
       }
-      if (!('strs' in currentLevel)) {
-        currentLevel['strs'] = [str]
-      } else {
-        currentLevel['strs'].push(str)
-      }
+      pushStreet(str, currentLevel)
       currentLevel = currentLevel[c]
     }
-    currentLevel['strs'] = [str]
+    pushStreet(str, currentLevel)
     currentLevel = graph
   }
 
