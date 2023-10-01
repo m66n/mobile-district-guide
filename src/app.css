@@ -7,3 +7,8 @@
 body {
   font-family: 'Ubuntu Condensed', sans-serif;
 }
+
+.my-full-height {
+  height: 85hv;
+  height: calc(var(--vh, 1vh) * 100);
+}
