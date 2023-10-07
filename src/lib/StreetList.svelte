@@ -27,7 +27,7 @@
       class="p-0.25 last:pb-0 mb-0.5 last:mb-0 {districts[getDistrict(street)]
         .bg}"
     >
-      {street} &nbsp; &#8658; &nbsp; {districts[getDistrict(street)].location}
+      {street} &nbsp; &#8594; &nbsp; {districts[getDistrict(street)].location}
     </p>
   {/each}
 </div>

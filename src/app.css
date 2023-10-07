@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .my-full-height {
-  height: 85hv;
+  height: 80hv;
   height: calc(var(--vh, 1vh) * 100);
 }
